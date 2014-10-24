@@ -1,6 +1,6 @@
 let s:undodir_name = '/home/tlb/.undodir'
 
-func ReadUndo()
+func! ReadUndo()
 "  if filereadable(expand('%:h'). '/UNDO/' . expand('%:t'))
 "    rundo %:h/UNDO/%:t
 "  let file = s:undodir_name . expand('%:p:h') . '/' . expand('%:t')
@@ -12,7 +12,7 @@ func ReadUndo()
   endif
 endfunc
 
-func WriteUndo()
+func! WriteUndo()
 "  let dirname = expand('%:h') . '/UNDO'
 "  if !isdirectory(dirname)
 "    call mkdir(dirname)
@@ -28,7 +28,7 @@ func WriteUndo()
   endif
 endfunc
 
-func DeleteUndo()
+func! DeleteUndo()
   if filereadable(s:undodir_name . expand('%:p:h') . '/' . expand('%:t'))
     :!rm -f ~/.undodir%:p:h/%:t
   endif
