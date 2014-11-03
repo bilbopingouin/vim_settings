@@ -109,22 +109,11 @@ au FileType ruby    let b:comment_leader = '# '
 au FileType javascript    let b:comment_leader = '// '
 
 
-noremap ,c : <C-B>sil <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:noh<CR>
-noremap ,u : <C-B>sil <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:noh<CR>
+nnoremap ,c : <C-B>sil <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:noh<CR>
+nnoremap ,u : <C-B>sil <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:noh<CR>
 
-" c plugin
-"filetype plugin on
-" documentation:
-" http://www.thegeekstuff.com/2009/01/tutorial-make-vim-as-your-cc-ide-using-cvim-plugin/
-" http://lug.fh-swf.de/vim/vim-c/c-hotkeys.pdf
-" http://www.vim.org/scripts/script.php?script_id=213
-" as vim-latex, this is too invasive! I can use a cheap solution
-nnoremap <leader>hc :r ~/.vim/templates/chead.c<CR>
-nnoremap <leader>fc :r ~/.vim/templates/cfunc.c<CR>
-" other alternative
-:so ~/.vim/scripts/ReadSkeleton.vim
-nmap <leader>rs :call ReadSkeleton()<cr>
-let Skeleton_path = "~/.vim/templates" 
+" templates for C/C++ files
+au FileType c,cpp source ~/.vim/scripts/c_templ.vim
 
 
 
