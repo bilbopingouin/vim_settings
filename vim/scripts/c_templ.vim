@@ -7,13 +7,16 @@
 " Modification history:
 "    Date   |  Name        | Comments
 "  ---------|--------------|-------------------------------
+"  4.11.14  | TLB          | Added function InsertPreProcIf and <leader>pi
 "           |              |
 "==============================================================================
 " Available commands:
 "  <leader>hc       -- inserts a comment header for C/C++ files
 "  <leader>fc       -- inserts a comment header for C/C++ functions
 "  <leader>dc       -- inserts a define "frame" for C/C++ header files 
-"								  (#if!def...)
+"			(#if!def...)
+"  <leader>pi       -- inserts a #if ( statement ) #endif where statement can
+"			be entered interactively
 "  <leader>rs       -- inserts any template: interactive choice
 "==============================================================================
 
@@ -36,14 +39,21 @@ nnoremap <leader>fc :r ~/.vim/templates/cfunc.c<CR>
 nmap <leader>rs :call ReadSkeleton()<cr>
 let Skeleton_path = "~/.vim/templates" 
 
+" Insert #if ... #endif
+function! InsertPreProcIf(def,inpar)
+  call append(line('.')-1,'#if ' . expand(a:def) . ' ( ' . expand(a:inpar) . ' )')
+  call append(line('.')  ,'#endif /* ' . expand(a:inpar) . ' */')
+endfunction
+
 " Insert pre-processor frame for headers depending on the filename
 function! InsertCHeaderPrec()
   let l:filename = "__" .expand('%') . "__"
   let l:dname = toupper(substitute(l:filename,'\.','_','g'))
-  call append(line('.')-1,'#if !defined (' . l:dname . ')')
+  "call append(line('.')-1,'#if !defined (' . l:dname . ')')
+  call InsertPreProcIf('!defined',l:dname)
   call append(line('.')-1,'#define ' . l:dname)
-  call append(line('.')  ,'#endif /* ' . l:dname . ' */')
+  "call append(line('.')  ,'#endif /* ' . l:dname . ' */')
 endfunction
 
-nnoremap <leader>dc :call InsertCHeaderPrec()<CR>
-
+nnoremap <Leader>dc :call InsertCHeaderPrec()<CR>
+nnoremap <Leader>pi :call InsertPreProcIf('',input('Statement: '))<CR>

@@ -21,7 +21,7 @@
 
 
 " http://www.ibm.com/developerworks/library/l-vim-script-2/index.html
-function AlignAssignments ()
+function! AlignAssignments ()
     "Patterns needed to locate assignment operators...
     let ASSIGN_OP   = '[-+*/%|&]\?=\@<!=[=~]\@!'
     let ASSIGN_LINE = '^\(.\{-}\)\s*\(' . ASSIGN_OP . '\)'
