@@ -1,3 +1,21 @@
+"==============================================================================
+" When having German characters entered and one wants to compile LaTeX w/o
+" changing the encoding of the file. It changes the special charactes with
+" their specific LaTeX code.
+"==============================================================================
+" Author: T. Le Bleis
+" Original date: 14.10.2014
+" Modification history:
+"    Date   |  Name        | Comments
+"  ---------|--------------|-------------------------------
+"           |              |
+"==============================================================================
+" Available commands:
+"  call Deu2utf()        -- Replace automatically in the whole file
+"==============================================================================
+
+
+
 function! Deu2utf()
   
   " Removing ignorecase to avoid problems

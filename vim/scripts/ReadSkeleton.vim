@@ -1,3 +1,22 @@
+"==============================================================================
+" Include some pre-defined templates into the text
+"==============================================================================
+" Author: (web)
+" Original date: (web)
+" Modification history:
+"    Date   |  Name        | Comments
+"  ---------|--------------|-------------------------------
+"           |              |
+"==============================================================================
+" Available commands:
+"  call ReadSkeleton()           -- See the available templates and insert it
+"==============================================================================
+" Notes
+"   http://vim.1045645.n5.nabble.com/How-to-insert-text-via-script-function-call-td1153378.html
+"==============================================================================
+
+
+
 function! ReadSkeleton()
   if exists ("g:Skeleton_path")
     let skeleton_path = g:Skeleton_path

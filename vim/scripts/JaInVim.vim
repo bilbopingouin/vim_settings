@@ -1,3 +1,23 @@
+"==============================================================================
+" Deals with file encoding and Japanese input layout
+"==============================================================================
+" Author: T. Le Bleis
+" Original date: 24.10.2014
+" Modification history:
+"    Date   |  Name        | Comments
+"  ---------|--------------|-------------------------------
+"           |              |
+"==============================================================================
+" Available commands:
+"  none           -- comment
+"==============================================================================
+" Note
+"   This is a historical components and I do not use anymore. But may be useful
+"  at some future time.
+"==============================================================================
+
+
+
 " This is specifically for the configuration on the EEE PC... if I could include another file...
 if $LANG == 'ja_JP.EUC-JP'
   " echo "Running Japanese"

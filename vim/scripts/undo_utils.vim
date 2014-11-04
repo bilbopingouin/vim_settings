@@ -1,3 +1,37 @@
+"==============================================================================
+" Save undo history into files to be usable after closing and reopening
+"==============================================================================
+" Author: T. Le Bleis
+" Original date: 24.10.2014
+" Modification history:
+"    Date   |  Name        | Comments
+"  ---------|--------------|-------------------------------
+"           |              |
+"==============================================================================
+" Available commands:
+"  <C-z>		-- Undo in insert mode: typical MS command
+"  <leader>vu		-- View undo history
+"  <leader>nu           -- No undo: delete current history file and prevent
+"			    saving currently edited file.
+"  <leader>su           -- Avoid prevention from the previous command (but do
+"			    not recover history).
+"==============================================================================
+" Notes
+"   The main functions were adapted from functions provided in the vim help
+"==============================================================================
+
+" undo in insert mode
+imap <C-z> <C-O>u
+
+" visualise undotree
+nmap <leader>vu :UndotreeToggle<CR>
+
+" keeping tracks of changes even after leaving a file
+if has("persistent_undo")
+    set undodir='~/.undodir/'
+    "set undofile
+endif 
+
 let s:undodir_name = '/home/tlb/.undodir'
 
 func! ReadUndo()
@@ -35,4 +69,11 @@ func! DeleteUndo()
   let g:undosave_yn = 0
 endfunc
 
+au BufReadPost * call ReadUndo()
+au BufWritePost * call WriteUndo()
+let g:undosave_yn = 1
+" if you don't want any undo file
+nmap <leader>nu :call DeleteUndo()<CR>
+" set/(re)set undo saving
+nmap <leader>su :let g:undosave_yn = 1
 
