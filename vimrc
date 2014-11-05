@@ -6,6 +6,7 @@
 " Modification history:
 "    Date   |  Name        | Comments
 "  ---------|--------------|-------------------------------
+"  5.11.14  |   TLB        | Moved syntax highl to color_configuration.vim
 "           |              |
 "==============================================================================
 " Available commands:
@@ -30,19 +31,11 @@ let mapleader = ',' " default is \ but on a French keyboard , is easier
 " Dealing with Japanese
 :source ~/.vim/scripts/JaInVim.vim
 
-"See colours of the syntax
-if &t_Co > 1
-  syntax enable
-endif
-
-" Some commands related to color highlighting
-" http://vim.wikia.com/wiki/Better_colors_for_syntax_highlighting
-map <silent> <F10> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
-nnoremap <silent> <Leader>rc :hi comment ctermfg=0 ctermbg=2 cterm=bold,standout<CR>
-nnoremap <silent> <Leader>dhi :hi clear<CR>
-
 " Some basic configuration
 source ~/.vim/scripts/basic_configuration.vim
+
+" Color schemes and highlighting
+source ~/.vim/scripts/color_configuration.vim
 
 " Text spell checking
 source ~/.vim/scripts/spellcheck.vim

@@ -6,7 +6,7 @@
 " Modification history:
 "    Date   |  Name        | Comments
 "  ---------|--------------|-------------------------------
-"           |              |
+"  5.11.14  |  TLB         | moved syntax highlighting to color_configuration.vim
 "==============================================================================
 " Available commands:
 "  <Space>	      -- Toggle Search Highlight
@@ -29,17 +29,18 @@
     " to search all case: use only lower case in search
     " otherwise will match the case
 
-" Highlighting search matches
-if &t_Co > 1
-  set hlsearch		      " Highlight search
-  highlight search guibg=LightGreen ctermbg=10  " Change color of highlight
-endif
+" moved to color_configuration.vim
+" " Highlighting search matches
+" if &t_Co > 1
+"   set hlsearch		      " Highlight search
+"   highlight search guibg=LightGreen ctermbg=10  " Change color of highlight
+" endif
 
 
   " some commands that can be useful:
-    " space to remove current highlighting
+    " space to remove current highlighting: movved to color_configuration.vim
 ":nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
-:nnoremap <silent> <Space> :se hlsearch!<CR>
+":nnoremap <silent> <Space> :se hlsearch!<CR>
     " F8 to do like * but without moving to the next occurence
 :nnoremap <F8> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
     " F8 and visual

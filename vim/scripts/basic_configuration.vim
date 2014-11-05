@@ -43,5 +43,3 @@ set backspace=indent,eol,start
 
 "Not cutting the end of the words
 :se lbr
-
-
