@@ -1,0 +1,1 @@
+/home/tlb/.vim/plugins/solarized/vim-colors-solarized-master/doc/solarized.txt

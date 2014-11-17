@@ -7,6 +7,7 @@
 "    Date   |  Name        | Comments
 "  ---------|--------------|-------------------------------
 "  5.11.14  |   TLB        | Moved syntax highl to color_configuration.vim
+" 10.11.14  |   TLB        | Added 'basic commands' 
 "           |              |
 "==============================================================================
 " Available commands:
@@ -36,6 +37,9 @@ source ~/.vim/scripts/basic_configuration.vim
 
 " Color schemes and highlighting
 source ~/.vim/scripts/color_configuration.vim
+
+" Basic various commands
+source ~/.vim/scripts/basic_commands.vim
 
 " Text spell checking
 source ~/.vim/scripts/spellcheck.vim

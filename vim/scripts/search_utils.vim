@@ -60,3 +60,30 @@
 
 "nnoremap <C-n> :cprev<cr>zvzz
 "nnoremap <C-p> :cnext<cr>zvzz
+
+" Using the built-in :find command
+" https://stackoverflow.com/questions/23976517/vim-find-command-how-to-list-all-matched-files
+set wildmenu
+set wildmode=longest,list
+set wildignorecase
+set wildignore=*.o,*.bak
+set path+=**
+" When typing :find I can use the <Tab> to see a list. I can also see some regexp pattern: 
+" :find **/*.c <Tab> will list the c files in the subdirectories
+
+" Some commands: but it does not work if there are too many files in the directory
+" regex completion instead of whole word completion
+"nnoremap <leader>f :find *
+" restrict the matching to files under the directory
+" of the current file, recursively
+"nnoremap <leader>F :find <C-R>=expand('%:p:h').'/**/*'<CR>
+" same as the two above but opens the file in an horizontal window
+"nnoremap <leader>s :sfind *
+"nnoremap <leader>S :sfind <C-R>=expand('%:p:h').'/**/*'<CR>
+" same as the two above but with a vertical window
+"nnoremap <leader>v :vert sfind *
+"nnoremap <leader>V :vert sfind <C-R>=expand('%:p:h').'/**/*'<CR>
+" Allows to look for files with the same name: useful to find .h or .c associated.
+" Run <Tab> twice afterwards
+nnoremap <Leader>s :find **/<C-R>=expand('%:t:r')<CR>
+

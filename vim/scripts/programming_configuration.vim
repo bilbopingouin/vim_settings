@@ -17,6 +17,11 @@
 "==============================================================================
 
 
+" set syntax for modelica file
+au BufRead,BufNewFile *.mo set filetype=mo
+
+" set syntax for arduino ino files
+au BufRead,BufNewFile *.ino set filetype=c
 
 "Indent with respects with C programming
 ":se cindent

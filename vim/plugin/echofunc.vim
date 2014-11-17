@@ -1,0 +1,1 @@
+/home/tlb/.vim/plugins/echofunc/echofunc.vim
