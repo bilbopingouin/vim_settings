@@ -6,6 +6,7 @@
 " Modification history:
 "    Date   |  Name        | Comments
 "  ---------|--------------|-------------------------------
+"  26.11.14 | TLB          | Adding the t_ut part
 "           |              |
 "==============================================================================
 " Available commands:
@@ -14,6 +15,12 @@
 " Notes
 "   Using a modified version of darkblue
 "==============================================================================
+
+" When running in tmux I have a strange bleeding of the background color
+" https://sunaku.github.io/vim-256color-bce.html
+if &term =~ '256color'
+  set t_ut=
+endif
 
 "See colours of the syntax
 if &t_Co > 1

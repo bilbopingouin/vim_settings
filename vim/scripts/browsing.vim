@@ -6,11 +6,11 @@
 " Modification history:
 "    Date   |  Name        | Comments
 "  ---------|--------------|-------------------------------
-"           |              |
+" 20.11.2014|  TLB         | <C-Left> -> <C-Up>
 "==============================================================================
 " Available commands:
 "  <F9>           -- Toggle :Vexplore
-"  <C-Left>       -- Runs :Rexplore to 'go back' to exploring mode
+"  <C-up>         -- Runs :Rexplore to 'go back' to exploring mode
 "==============================================================================
 " Notes
 "   A compilation between internet sources and vim built-in help
@@ -61,5 +61,5 @@ endfunction
 "map <silent> <C-E> :call ToggleVExplorer()<CR>
 map <silent> <F9> :call ToggleVExplorer()<CR>
 
-nmap <silent> <C-Left> :Rexplore<CR>
+nmap <silent> <C-Up> :Rexplore<CR>
 

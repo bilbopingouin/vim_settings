@@ -23,6 +23,9 @@ au BufRead,BufNewFile *.mo set filetype=mo
 " set syntax for arduino ino files
 au BufRead,BufNewFile *.ino set filetype=c
 
+" Gnuplot configuration
+au BufRead,BufNewFile *.gp  set filetype=gnuplot
+
 "Indent with respects with C programming
 ":se cindent
 au FileType c,cpp     set cindent " sets cindent but only for certain files

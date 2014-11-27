@@ -7,12 +7,15 @@
 "    Date   |  Name        | Comments
 "  ---------|--------------|-------------------------------
 "  5.11.14  |  TLB         | moved syntax highlighting to color_configuration.vim
+" 20.11.14  |  TLB         | <C-Right> and <C-Left>
 "==============================================================================
 " Available commands:
 "  <Space>	      -- Toggle Search Highlight
 "  <F8>		      -- Highlight occurences of current word w/o jump
 "  *		      -- Same as built-in * but with visually selected text
 "  #		      -- Same as built-in # but with visually selected text
+"  <C-Left>	      -- Jumps to previous item in location list
+"  <C-Right>	      -- Jumps to next item in location list
 " Built-in commands:
 "  *		      -- Search current word
 "  #		      -- Backward search current word
@@ -87,3 +90,10 @@ set path+=**
 " Run <Tab> twice afterwards
 nnoremap <Leader>s :find **/<C-R>=expand('%:t:r')<CR>
 
+
+" Often useful to search something with :lvimgrep pattern/j **/*.[ch]
+" one can see the list using :lw of closing it using :lcl
+" but jumps without opening the window can be obtained using
+" :lnext and :lprev it is more useful to have it as <C-Right> and <C-Left>
+nnoremap <C-Left>   :lprev<CR>
+nnoremap <C-Right>  :lnext<CR>

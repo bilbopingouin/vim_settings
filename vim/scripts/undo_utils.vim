@@ -6,6 +6,7 @@
 " Modification history:
 "    Date   |  Name        | Comments
 "  ---------|--------------|-------------------------------
+"  27.11.14 | TLB          | No hardcoding of the home directory
 "           |              |
 "==============================================================================
 " Available commands:
@@ -32,7 +33,8 @@ if has("persistent_undo")
     "set undofile
 endif 
 
-let s:undodir_name = '/home/tlb/.undodir'
+let s:undodir_name = expand('~') . '/.undodir'
+
 
 func! ReadUndo()
 "  if filereadable(expand('%:h'). '/UNDO/' . expand('%:t'))

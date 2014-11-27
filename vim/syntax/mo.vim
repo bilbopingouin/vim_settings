@@ -1,40 +1,50 @@
 " Created for modelica files
 " Author: T. Le Bleis (tudi.lebleis@gmail.com)
 " Original: 13.11.2014
-" Modification: 14.11.2014
+" Modification: 20.11.2014
+" -------------------------------------------------------------
 
 " No time to deal with backward compatibility
 if version<700
   finish
 endif
 
+" -------------------------------------------------------------
+" Customary check
 if exists("b:current_syntax")
   finish
 endif
 
-
-syn match   modelicaModDecl   '^\s*[A-Za-z]\+\s\+[A-Za-z0-9\.]\+' transparent contains=modelicaKeyMod,modelicaModName,modelicaKeyPProc,modelicaKeyEnd,modelicaKeytype
+" -------------------------------------------------------------
+" Find syntax elements
+syn match   modelicaModDecl   '^\s*[A-Za-z]\+\s\+[A-Za-z0-9\.]\+' transparent contains=modelicaKeyMod,modelicaModName,modelicaKeyPProc,modelicaKeyEnd,modelicaKeytype,modelicaLibElem
 
 syn match   modelicaModName   '[A-Za-z0-9\.]\+' contained
 
-syn keyword modelicaKeyMod    model package contained nextgroup=modelicaModName
+syn keyword modelicaKeyMod    model package function nextgroup=modelicaModName
 syn keyword modelicaKeyPProc  within import extends contained nextgroup=modelicaModName
+syn keyword modelicaModVar    partial nextgroup=modelicaKeyMod
 
 syn keyword modelicaKeyEnd    end contained
 
 syn keyword modelicaKeyCond   if when then elseif contained
 syn keyword modelicaKeyCond   else
-syn match   modelicaCondStart '^\s*\(if\|when\|elseif\)\s*.*then' contains=modelicaKeyCond
+syn match   modelicaCondStart '^\s*\(if\|when\|elseif\)\s*.*then' contains=modelicaKeyCond,modelicaKeyBool
 syn match   modelicaCondEnd   '^\s*end\s*\(if\|when\)' contains=modelicaKeyCond,modelicaKeyEnd
+syn keyword modelicaKeyBool   and or contained
 
-syn keyword modelicaKeySect   equation algorithm
+syn keyword modelicaKeySect   equation algorithm protected public
 
 syn keyword modelicaKeyFunc   reinit connect
 
 syn keyword modelicaKeyType   Real String Boolean Integer
-syn keyword modelicaKeyType   parameter final
+syn keyword modelicaKeyType   parameter final redeclare replaceable
+syn keyword modelicaKeyType   output input
 
-syn region  modelicaString    start='"' end='"'
+syn match   modelicaLibElem   '[Mm]odelica\.[A-Za-z0-9\.]\+'
+syn match   modelicaSelfLib   '^\s*[A-Z][A-Za-z0-9]\+\.[A-Za-z0-9\.]\+'
+
+syn region  modelicaString    start='"' skip='\\"' end='"'
 
 syn match   modelicaComment   '\/\/.*$'
 
@@ -49,8 +59,9 @@ syn keyword modelicaKeyLang   der
 " syn region  outerBraces	      start='(' end=')' transparent contains=innerBraces
 " syn region  modelicaAnnot     start='annotation' end=';'
 " syn keyword modelicaKeyAnnot  annotation
-syn match   modelicaAnnot     'annotation\s*([\ ()A-Za-z0-9\n={},-.<>\/:%]\+)'
-syn match   modelicaAnnot     'annotation\s*([\ ()A-Za-z0-9\n={},-.<>/:%]\+)'
+syn match   modelicaAnnot     'annotation\s*([\ ()A-Za-z0-9\n={},-.<>\/:%&\"]\+)'
+" /annotation\s*([A-Za-z0-9(){}=\-,\n\t\ \.\"<>\/:&%]*); matches most of the annotation
+" syn match   modelicaAnnot     'annotation\s*([\ ()A-Za-z0-9\n={},-.<>/:%]\+)'
 " the previous line is not a perfect match, but it's the best I have had so far...
 
 " Keywords
@@ -90,8 +101,12 @@ syn match   modelicaAnnot     'annotation\s*([\ ()A-Za-z0-9\n={},-.<>/:%]\+)'
 " Indent
 " syn region modelicaModel start="model" end="end" fold transparent
 
-
+" -------------------------------------------------------------
+" Declare the current syntax
 let b:current_syntax="mo"
+
+" -------------------------------------------------------------
+" Sets the color scheme
 
 " hi def link modelicaKeyword   Special
 " hi def link modelicaString    String
@@ -112,9 +127,11 @@ hi def link modelicaKeyMod    Preproc
 hi def link modelicaKeyPProc  Special
 hi def link modelicaKeySect   Special
 hi def link modelicaKeyEnd    Special
+hi def link modelicaModVar    Special
 
 " hi def link modelicaKeyCond   Identifier
 hi def link modelicaKeyCond   Special
+hi def link modelicaKeyBool   Special
 
 hi def link modelicaKeytype   Type
 
@@ -128,6 +145,9 @@ hi def link modelicaKeyFunc   Type
 hi def link modelicaAnnot     Constant
 
 hi def link modelicaModName   Identifier
+
+hi def link modelicaSelfLib   Identifier
+hi def link modelicaLibElem   Type
 
 
 " hi Statement	
