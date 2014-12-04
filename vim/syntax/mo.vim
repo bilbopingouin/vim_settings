@@ -47,6 +47,7 @@ syn match   modelicaSelfLib   '^\s*[A-Z][A-Za-z0-9]\+\.[A-Za-z0-9\.]\+'
 syn region  modelicaString    start='"' skip='\\"' end='"'
 
 syn match   modelicaComment   '\/\/.*$'
+syn region  modelicaComment   start='/\*' end='\*/'
 
 syn region  modelicaCond      start='if' end='end\s*if;' transparent fold contains=modelicaKeyCond,modelicaKeyEnd
 syn region  modelicaCond      start='when' end='end\s*when;' transparent fold contains=modelicaKeyCond,modelicaKeyEnd
@@ -59,7 +60,8 @@ syn keyword modelicaKeyLang   der
 " syn region  outerBraces	      start='(' end=')' transparent contains=innerBraces
 " syn region  modelicaAnnot     start='annotation' end=';'
 " syn keyword modelicaKeyAnnot  annotation
-syn match   modelicaAnnot     'annotation\s*([\ ()A-Za-z0-9\n={},-.<>\/:%&\"]\+)'
+syn match   modelicaAnnot     'annotation\s*([\ ()A-Za-z0-9\n={},-.<>\/:%&\"]\+)' contains=modelicaAnnotHTML
+syn region  modelicaAnnotHTML  start='\"\s*<html>' end='</html>\s*\"'
 " /annotation\s*([A-Za-z0-9(){}=\-,\n\t\ \.\"<>\/:&%]*); matches most of the annotation
 " syn match   modelicaAnnot     'annotation\s*([\ ()A-Za-z0-9\n={},-.<>/:%]\+)'
 " the previous line is not a perfect match, but it's the best I have had so far...
@@ -143,6 +145,7 @@ hi def link modelicaKeyFunc   Type
 
 " hi def link modelicaKeyAnnot  Constant
 hi def link modelicaAnnot     Constant
+hi def link modelicaAnnotHTML Constant
 
 hi def link modelicaModName   Identifier
 
