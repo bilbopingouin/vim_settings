@@ -6,6 +6,7 @@
 " Modification history:
 "    Date   |  Name        | Comments
 "  ---------|--------------|-------------------------------
+" 2015.01.07| TLB          | Adding fugitive in statusline & making statusline always visible
 "           |              |
 "==============================================================================
 " Available commands:
@@ -33,7 +34,11 @@ set showcmd	    " see that we have typed the leader and other commands
 "	< 4 * 2 spaces = 1 tab
 
 "Set the status line
-set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+set statusline=%<%f\ %h%m%r%q%{fugitive#statusline()[4:-2]}%=%-14.(%l,%c%V%)\ %P
+"set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+
+" See the statusline even if only one file is opened
+set laststatus=2
 
 "Show positions of the cursor within the file
 :se ruler

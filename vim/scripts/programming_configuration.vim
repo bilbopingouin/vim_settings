@@ -45,6 +45,9 @@ source ~/.vim/scripts/commenting_code.vim
 " templates for C/C++ files
 au FileType c,cpp source ~/.vim/scripts/c_templ.vim
 
+" templates also available for other files:
+au FileType mo	source ~/.vim/scripts/c_templ.vim
+
 " Aligning assignments:
 source ~/.vim/scripts/align_assign.vim
 

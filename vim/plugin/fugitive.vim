@@ -1,0 +1,1 @@
+/home/tlb/.vim/plugins/fugitive/vim-fugitive/plugin/fugitive.vim
