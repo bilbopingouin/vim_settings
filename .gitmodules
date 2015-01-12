@@ -1,0 +1,3 @@
+[submodule "vim/plugins/fugitive/vim-fugitive"]
+	path = vim/plugins/fugitive/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git

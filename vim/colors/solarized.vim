@@ -1,1 +1,0 @@
-/home/tlb/.vim/plugins/solarized/vim-colors-solarized-master/colors/solarized.vim

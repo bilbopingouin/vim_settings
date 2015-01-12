@@ -1,2 +1,14 @@
 # Backup files
 *.zip
+
+.*.swp
+
+# softlinks
+vim/colors/solarized.vim
+vim/doc/fugitive.txt
+vim/doc/solarized.txt
+vim/plugin/echofunc.vim
+vim/plugin/fugitive.vim
+vim/plugin/undotree.vim
+vim/syntax/undotree.vim
+
