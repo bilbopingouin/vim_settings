@@ -4,11 +4,10 @@
 #mkdir $dir
 
 # Simlink
-for file in `find * -maxdepth 0 -type f -not -path ".git/"`
+for file in `find * -maxdepth 0 -type f -not -path ".git/" -not -name "*.root" -not -name "set_links.sh"`
 do
   if [ -L ~/.$file ]
   then
-    echo " Update: $file"
     rm -f ~/.$file
     ln -s $PWD/$file ~/.$file
   else
@@ -33,9 +32,9 @@ do
 
   for file in `find $d -type f`
   do
+    echo " Update: $file"
     if [ -L ~/.$file ]
     then
-      echo " Update: $file"
       rm -f ~/.$file
       ln -s $PWD/$file ~/.$file
     else
@@ -53,7 +52,13 @@ done
 # Sets symlink, like for vim
 if [ -L ~/.vim ]
 then 
+  echo " Delete ~/.vim link"
   rm -f ~/.vim
+fi
+
+if [ ! -e ~/.vim ]
+then
+  echo " Set ~/.vim link"
   ln -s $PWD/vim ~/.vim
   
   cd ~/.vim
@@ -70,4 +75,9 @@ then
   ln -s  ~/.vim/plugins/undotree/undotree-rel_4.3/./syntax/undotree.vim		  ~/.vim/syntax/undotree.vim 
 else
   echo "~/.vim should be set manually: not a softlink"
+fi
+
+if [ ! -e ~/.undodir ]
+then
+  mkdir ~/.undodir
 fi

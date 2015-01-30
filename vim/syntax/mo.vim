@@ -55,6 +55,8 @@ syn region  modelicaCond      start='when' end='end\s*when;' transparent fold co
 
 syn keyword modelicaKeyLang   der
 
+syn keyword modelicaKeyTF     true false
+
 " Annotations
 " syn match   innerBraces	      '([^()]*)' transparent contained
 " syn region  outerBraces	      start='(' end=')' transparent contains=innerBraces
@@ -152,6 +154,7 @@ hi def link modelicaModName   Identifier
 hi def link modelicaSelfLib   Identifier
 hi def link modelicaLibElem   Type
 
+hi def link modelicaKeyTF     Statement
 
 " hi Statement	
 " hi Underlined	

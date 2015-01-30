@@ -1,4 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/mnt/hgfs/tlbcyg/pm-all/code/Original sources/SW_REX-TF2_FCC-II_20140108_V01-17/Sources'
-let g:netrw_dirhist_2='/mnt/hgfs/tlbcyg/pm-all/code/Original sources/SW_REX-TF2_FCC-II_20140108_V01-17/Sources/Client'

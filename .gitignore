@@ -1,5 +1,6 @@
 # Backup files
 *.zip
+*.tar.bz2
 
 .*.swp
 
@@ -12,3 +13,5 @@ vim/plugin/fugitive.vim
 vim/plugin/undotree.vim
 vim/syntax/undotree.vim
 
+# netrw history
+vim/.netrwhist
