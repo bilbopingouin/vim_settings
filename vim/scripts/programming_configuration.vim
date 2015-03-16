@@ -8,6 +8,7 @@
 "  ---------|--------------|-------------------------------
 " 2015/02/26| TLB          | Adding the C-x functionality
 " 2015/03/03| TLB          | Adding the C-Down functionality and fixing the C-x
+" 2015/03/10| TLB	   | Octave files
 "           |              |
 "==============================================================================
 " Available commands:
@@ -28,6 +29,9 @@ au BufRead,BufNewFile *.ino set filetype=c
 
 " Gnuplot configuration
 au BufRead,BufNewFile *.gp  set filetype=gnuplot
+
+" GNU Octave. conflicts with matlab
+au BufRead,BufNewFile *.m  set filetype=octave 
 
 "Indent with respects with C programming
 ":se cindent
@@ -68,7 +72,8 @@ au FileType c,cpp set foldmethod=indent
 source ~/.vim/scripts/tags.vim
 
 " Run the program/script
-au FileType c,cpp		nmap <buffer> <C-x> :!./%<<CR>
-au FileType python,perl,bash,sh nmap <buffer> <C-x> :!./%<CR>
-au FileType gnuplot		nmap <buffer> <C-x> :!gnuplot %<CR>
+au FileType c,cpp		nmap <buffer> <C-l> :!./%<<CR>
+au FileType python,perl,bash,sh nmap <buffer> <C-l> :!./%<CR>
+au FileType gnuplot		nmap <buffer> <C-l> :!gnuplot %<CR>
+au FileType octave		nmap <buffer> <C-l> :!octave %<CR>
 
