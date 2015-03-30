@@ -21,6 +21,7 @@
 if &term =~ '256color'
   set t_ut=
 endif
+" essentially adds spaces until the end of the screen. This is a problem when copy-paste with mouse selection
 
 "See colours of the syntax
 if &t_Co > 1

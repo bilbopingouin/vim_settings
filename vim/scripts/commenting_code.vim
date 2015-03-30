@@ -29,6 +29,8 @@ au FileType vhdl    let b:comment_leader = '-- '
 au FileType python  let b:comment_leader = '# '
 au FileType ruby    let b:comment_leader = '# '
 au FileType javascript    let b:comment_leader = '// '
+au FileType gnuplot let b:comment_leader = '# '
+au FileType octave  let b:comment_leader = '# '
 
 
 noremap <leader>c : <C-B>sil <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:noh<CR>
