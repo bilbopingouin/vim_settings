@@ -12,7 +12,7 @@
 "           |              |
 "==============================================================================
 " Available commands:
-"  C-x           -- run a program/script that is being edited
+"  C-l           -- run a program/script that is being edited
 "  C-Down	 -- if quickfix window is opened: jumps to the next error (:cn)
 "==============================================================================
 " Notes
@@ -59,7 +59,8 @@ source ~/.vim/scripts/commenting_code.vim
 au FileType c,cpp source ~/.vim/scripts/c_templ.vim
 
 " templates also available for other files:
-au FileType mo	source ~/.vim/scripts/c_templ.vim
+au FileType mo	    source ~/.vim/scripts/c_templ.vim
+au FileType octave  source ~/.vim/scripts/c_templ.vim
 
 " Aligning assignments:
 source ~/.vim/scripts/align_assign.vim

@@ -25,8 +25,9 @@ syn keyword octaveBasicKeys   if endif else elseif
 syn keyword octaveBasicKeys   for endfor
 syn keyword octaveBasicKeys   end
 syn keyword octaveBasicKeys   while endwhile
+syn keyword octaveBasicKeys   do until
 
-syn keyword octaveIOKeys      printf save load input
+syn keyword octaveIOKeys      printf save load input error
 syn keyword octaveIOKeys      save_default_options save_precision save_header_format_string
 syn keyword octaveIOKeys      fileread native_float_format fdisp dlmwrite dlmread csvwrite csvread textread textscan importdata 
 syn keyword octaveIOKeys      argv program_name system
