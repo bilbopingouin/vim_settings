@@ -1,10 +1,8 @@
 #!/bin/bash
 
-#dir= ~/cfg_backup_`date +%F`
-#mkdir $dir
 
 # Simlink
-for file in `find * -maxdepth 0 -type f -not -path ".git/" -not -name "*.root" -not -name "set_links.sh"`
+for file in `find * -maxdepth 0 -type f -not -path ".git/" -not -name "set_links.sh"`
 do
   if [ -L ~/.$file ]
   then
@@ -18,34 +16,6 @@ do
       diff -q ~/.$file $file
     fi
   fi
-done
-
-dirs='aptitude elinks oh-my-zsh'
-for d in $dirs
-do
-  echo "dir: $d"
-
-  if [ ! -e ~/.$d ]
-  then
-    mkdir ~/.$d
-  fi
-
-  for file in `find $d -type f`
-  do
-    echo " Update: $file"
-    if [ -L ~/.$file ]
-    then
-      rm -f ~/.$file
-      ln -s $PWD/$file ~/.$file
-    else
-      if [ ! -e ~/.$file ]
-      then
-	ln -s $PWD/$file ~/.$file
-      else
-	diff -q ~/.$file $file
-      fi
-    fi
-  done
 done
 
 
