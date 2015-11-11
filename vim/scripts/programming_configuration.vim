@@ -33,6 +33,9 @@ au BufRead,BufNewFile *.gp  set filetype=gnuplot
 " GNU Octave. conflicts with matlab
 au BufRead,BufNewFile *.m  set filetype=octave 
 
+" Siemens SCL
+au BufRead,BufNewFile *.scl set filetype=scl
+
 "Indent with respects with C programming
 ":se cindent
 au FileType c,cpp     set cindent " sets cindent but only for certain files
