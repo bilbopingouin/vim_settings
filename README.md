@@ -21,25 +21,33 @@ On Linux, run the following
 
   - backup your existing configuration
 
-    cd $HOME
-    tar -cvjf vim_cfg_backup.tar.bz2 ./.vim*
-    
+	```
+        cd $HOME
+        tar -cvjf vim_cfg_backup.tar.bz2 ./.vim*
+	```
 
   - get the source
 
+	```
     mkdir my_configuration_dir
     cd my_configuration_dir
     git clone https://github.com/bilbopingouin/vim_settings.git
     cd vim_settings
     git submodule init
     git submodule update
+	```
 
   - install
 
+    
+	```
     cd my_configuration_dir/vim_settings
     ./set_links.sh
+	```
 
 All the configuration files are organised using soft-links. Also the .vim repository will be soft-link to the current one.
+
+On Windows, you should find out by yourself.
 
 Notes
 -----
