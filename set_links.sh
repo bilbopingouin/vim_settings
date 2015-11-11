@@ -51,7 +51,7 @@ then
   for file in `find ~/.vim/plugins/vim-games/plugin/* -maxdepth 0`; do ln -s $file $(echo $file | sed -n 's/plugins\/vim-games\///p'); done
   # vim-surround
   ln -s ~/.vim/plugins/vim-surround/plugin/surround.vim				    ~/.vim/plugin/surround.vim
-  ln -s ~/.vim/plugins/vim-surround/doc/surround.txt				    ~/.vim/plugin/surround.txt
+  ln -s ~/.vim/plugins/vim-surround/doc/surround.txt				    ~/.vim/doc/surround.txt
 else
   echo "~/.vim should be set manually: not a softlink"
 fi
