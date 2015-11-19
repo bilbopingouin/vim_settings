@@ -52,6 +52,10 @@ then
   # vim-surround
   ln -s ~/.vim/plugins/vim-surround/plugin/surround.vim				    ~/.vim/plugin/surround.vim
   ln -s ~/.vim/plugins/vim-surround/doc/surround.txt				    ~/.vim/doc/surround.txt
+  # align
+  for file in `find ~/.vim/plugins/align/plugin/* -maxdepth 0`; do ln -s $file $(echo $file | sed -n 's/plugins\/align\///p'); done
+  for file in `find ~/.vim/plugins/align/doc/* -maxdepth 0`; do ln -s $file $(echo $file | sed -n 's/plugins\/align\///p'); done
+  for file in `find ~/.vim/plugins/align/autoload/* -maxdepth 0`; do ln -s $file $(echo $file | sed -n 's/plugins\/align\///p'); done
 else
   echo "~/.vim should be set manually: not a softlink"
 fi

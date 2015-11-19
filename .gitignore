@@ -19,6 +19,13 @@ vim/plugin/sudoku.vim
 vim/plugin/sudoku_game.vim
 vim/plugin/surround.vim
 vim/plugin/tetris.vim
+vim/doc/Align.txt
+vim/plugin/AlignMapsPlugin.vim
+vim/plugin/AlignPlugin.vim
+vim/plugin/cecutil.vim
+vim/autoload/Align.vim
+vim/autoload/AlignMaps.vim
+
 
 # netrw history
 vim/.netrwhist

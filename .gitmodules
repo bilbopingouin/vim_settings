@@ -7,3 +7,6 @@
 [submodule "vim/plugins/vim-surround"]
 	path = vim/plugins/vim-surround
 	url = https://github.com/tpope/vim-surround.git
+[submodule "vim/plugins/align"]
+	path = vim/plugins/align
+	url = https://github.com/vim-scripts/Align.git
