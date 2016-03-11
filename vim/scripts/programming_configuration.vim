@@ -41,6 +41,10 @@ au BufRead,BufNewFile *.scl set filetype=scl
 au FileType c,cpp     set cindent " sets cindent but only for certain files
 au FileType javacript set cindent
 
+"From Pep8 standard, indent should be 4 spaces in python
+au FileType python	  set softtabstop=4
+au FileType python	  set shiftwidth=4
+
 " Compile and show result in a split screen
 "map <F7> :w<enter>:tabnew<enter>:r!make<enter>
 " one can also use :make which calls a Makefile

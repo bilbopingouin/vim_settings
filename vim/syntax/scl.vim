@@ -29,9 +29,9 @@ syn region  sclComment	      start="(\*" end="\*)" contains=@Spell
 syn case ignore
 
 " Function
-syn keyword sclFuncError      END_FUNCTION
+syn keyword sclFuncError      END_FUNCTION END_FUNCTION_BLOCK
 
-syn keyword sclFuncKey	      contained FUNCTION BEGIN END_FUNCTION
+syn keyword sclFuncKey	      contained FUNCTION BEGIN END_FUNCTION FUNCTION_BLOCK END_FUNCTION_BLOCK
 syn region  sclFunctionBlock  matchgroup=sclFuncKey start='FUNCTION' end='\zeBEGIN'  fold transparent
 syn region  sclFunctionBlock  matchgroup=sclFuncKey start="BEGIN" end="END_FUNCTION" fold transparent
 

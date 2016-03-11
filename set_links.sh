@@ -1,5 +1,7 @@
 #!/bin/bash
 
+TARGET_DIR=~/.vim
+UNDODIR=~/.undodir
 
 # Simlink
 for file in `find * -maxdepth 0 -type f -not -path ".git/" -not -name "set_links.sh"`
@@ -20,47 +22,57 @@ done
 
 
 # Sets symlink, like for vim
-if [ -L ~/.vim ]
+if [ -L $TARGET_DIR ]
 then 
-  echo " Delete ~/.vim link"
-  rm -f ~/.vim
+  echo " Delete $TARGET_DIR link"
+  rm -f $TARGET_DIR
 fi
 
-if [ ! -e ~/.vim ]
+if [ ! -e $TARGET_DIR ]
 then
-  echo " Set ~/.vim link"
-  ln -s $PWD/vim ~/.vim
+  echo " Set $TARGET_DIR link"
+  ln -s $PWD/vim $TARGET_DIR
   
-  cd ~/.vim
+  cd $TARGET_DIR
   echo "Found links:"
   find . -type l -ls
   find . -type l -delete
   cd -
+
+  # Adding some directories
+  for dir in autoload
+  do
+    if [ ! -e $TARGET_DIR/$dir ]
+    then
+      mkdir $TARGET_DIR/$dir
+    fi 
+  done
+
   # Solarized
-  ln -s  ~/.vim/plugins/solarized/vim-colors-solarized-master/colors/solarized.vim  ~/.vim/colors/solarized.vim
-  ln -s  ~/.vim/plugins/solarized/vim-colors-solarized-master/doc/solarized.txt	    ~/.vim/doc/solarized.txt	
+  ln -s  $TARGET_DIR/plugins/solarized/vim-colors-solarized-master/colors/solarized.vim  $TARGET_DIR/colors/solarized.vim
+  ln -s  $TARGET_DIR/plugins/solarized/vim-colors-solarized-master/doc/solarized.txt	 $TARGET_DIR/doc/solarized.txt	
   # Undotree
-  ln -s  ~/.vim/plugins/undotree/undotree-rel_4.3/./plugin/undotree.vim		    ~/.vim/plugin/undotree.vim 
-  ln -s  ~/.vim/plugins/undotree/undotree-rel_4.3/./syntax/undotree.vim		    ~/.vim/syntax/undotree.vim 
+  ln -s  $TARGET_DIR/plugins/undotree/undotree-rel_4.3/./plugin/undotree.vim		 $TARGET_DIR/plugin/undotree.vim 
+  ln -s  $TARGET_DIR/plugins/undotree/undotree-rel_4.3/./syntax/undotree.vim		 $TARGET_DIR/syntax/undotree.vim 
   # Echo func
-  ln -s  ~/.vim/plugins/echofunc/echofunc.vim					    ~/.vim/plugin/echofunc.vim 
+  ln -s  $TARGET_DIR/plugins/echofunc/echofunc.vim					 $TARGET_DIR/plugin/echofunc.vim 
   # fugitive
-  ln -s  ~/.vim/plugins/fugitive/vim-fugitive/plugin/fugitive.vim		    ~/.vim/plugin/fugitive.vim 
-  ln -s  ~/.vim/plugins/fugitive/vim-fugitive/doc/fugitive.txt			    ~/.vim/doc/fugitive.txt	
+  ln -s  $TARGET_DIR/plugins/fugitive/vim-fugitive/plugin/fugitive.vim			 $TARGET_DIR/plugin/fugitive.vim 
+  ln -s  $TARGET_DIR/plugins/fugitive/vim-fugitive/doc/fugitive.txt			 $TARGET_DIR/doc/fugitive.txt	
   # vim games
-  for file in `find ~/.vim/plugins/vim-games/plugin/* -maxdepth 0`; do ln -s $file $(echo $file | sed -n 's/plugins\/vim-games\///p'); done
+  for file in `find $TARGET_DIR/plugins/vim-games/plugin/* -maxdepth 0`; do ln -s $file $(echo $file | sed -n 's/plugins\/vim-games\///p'); done
   # vim-surround
-  ln -s ~/.vim/plugins/vim-surround/plugin/surround.vim				    ~/.vim/plugin/surround.vim
-  ln -s ~/.vim/plugins/vim-surround/doc/surround.txt				    ~/.vim/doc/surround.txt
+  ln -s $TARGET_DIR/plugins/vim-surround/plugin/surround.vim				 $TARGET_DIR/plugin/surround.vim
+  ln -s $TARGET_DIR/plugins/vim-surround/doc/surround.txt				 $TARGET_DIR/doc/surround.txt
   # align
-  for file in `find ~/.vim/plugins/align/plugin/* -maxdepth 0`; do ln -s $file $(echo $file | sed -n 's/plugins\/align\///p'); done
-  for file in `find ~/.vim/plugins/align/doc/* -maxdepth 0`; do ln -s $file $(echo $file | sed -n 's/plugins\/align\///p'); done
-  for file in `find ~/.vim/plugins/align/autoload/* -maxdepth 0`; do ln -s $file $(echo $file | sed -n 's/plugins\/align\///p'); done
+  for file in `find $TARGET_DIR/plugins/align/plugin/* -maxdepth 0`;	 do ln -s $file $(echo $file | sed -n 's/plugins\/align\///p'); done
+  for file in `find $TARGET_DIR/plugins/align/doc/* -maxdepth 0`;	 do ln -s $file $(echo $file | sed -n 's/plugins\/align\///p'); done
+  for file in `find $TARGET_DIR/plugins/align/autoload/* -maxdepth 0`;	 do ln -s $file $(echo $file | sed -n 's/plugins\/align\///p'); done
 else
-  echo "~/.vim should be set manually: not a softlink"
+  echo "$TARGET_DIR should be set manually: not a softlink"
 fi
 
-if [ ! -e ~/.undodir ]
+if [ ! -e $UNDODIR ]
 then
-  mkdir ~/.undodir
+  mkdir $UNDODIR
 fi
