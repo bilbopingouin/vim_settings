@@ -14,13 +14,16 @@
 /** 
  * @ingroup             Put module name here
  * @file                |FILENAME|
- * @author              |AUTHOR| (|AUTHORREF|), |EMAIL|              
+ * @author              TLB (|AUTHORREF|), |EMAIL|              
  * @date                |DATE| |TIME|
  * @version	        0.1
  * 
  * @b Description
  *      
  *      Put description here
+ *
+ *  History
+ *	|xxxx.xx.xx|  TLB   Creation
  *
  ******************************************************************************/
 

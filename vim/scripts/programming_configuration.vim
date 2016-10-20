@@ -85,3 +85,5 @@ au FileType python,perl,bash,sh nmap <buffer> <C-l> :!./%<CR>
 au FileType gnuplot		nmap <buffer> <C-l> :!gnuplot %<CR>
 au FileType octave		nmap <buffer> <C-l> :!octave %<CR>
 
+" When using diff, some options
+set diffopt=filler,iwhite

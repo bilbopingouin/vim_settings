@@ -97,3 +97,6 @@ nnoremap <Leader>s :find **/<C-R>=expand('%:t:r')<CR>
 " :lnext and :lprev it is more useful to have it as <C-Right> and <C-Left>
 nnoremap <C-Left>   :lprev<CR>
 nnoremap <C-Right>  :lnext<CR>
+
+" When working on a large project, I regularly use lvimgrep, so here are some utilities to make easier
+nnoremap <leader>lvc :execute "lvimgrep /".input("Pattern: ")."/j **/*.[ch]"<CR>

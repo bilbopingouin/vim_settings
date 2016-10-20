@@ -47,7 +47,8 @@ endfunction
 
 " Insert pre-processor frame for headers depending on the filename
 function! InsertCHeaderPrec()
-  let l:filename = "__" .expand('%') . "__"
+  let l:filename = "__" .expand('%:t') . "__"
+  "let l:filename = "__" .expand('%') . "__"
   let l:dname = toupper(substitute(l:filename,'\.','_','g'))
   "call append(line('.')-1,'#if !defined (' . l:dname . ')')
   call InsertPreProcIf('!defined',l:dname)
