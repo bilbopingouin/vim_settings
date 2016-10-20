@@ -44,6 +44,7 @@ au FileType javacript set cindent
 "From Pep8 standard, indent should be 4 spaces in python
 au FileType python	  set softtabstop=4
 au FileType python	  set shiftwidth=4
+au FileType python        set expandtab         " convert tabs into spaces, python3 refuses mixing
 
 " Compile and show result in a split screen
 "map <F7> :w<enter>:tabnew<enter>:r!make<enter>
