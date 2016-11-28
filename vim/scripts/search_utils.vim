@@ -100,3 +100,6 @@ nnoremap <C-Right>  :lnext<CR>
 
 " When working on a large project, I regularly use lvimgrep, so here are some utilities to make easier
 nnoremap <leader>lvc :execute "lvimgrep /".input("Pattern: ")."/j **/*.[ch]"<CR>
+nnoremap §	     bye:execute "lvimgrep /\\<".@"."\\>/j **/*.[ch]"<CR>
+vnoremap §	     y:execute "lvimgrep /\\<".@"."\\>/j **/*.[ch]"<CR>
+
