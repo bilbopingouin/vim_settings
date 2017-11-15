@@ -30,6 +30,8 @@
 " http://www.anattatechnologies.com/q/2014/04/vim-tags-and-tabs/
 set tags+=tags;$HOME
 
+" Jump to a file definition. Should be default, but seems to fail to work somehow
+nmap <C-]> :exec("tag ".expand("<cword>"))<CR> 
 " do like <C-]> but opens the new file in a tab
 nmap <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR> 
 nmap <C-,> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
