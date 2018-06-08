@@ -1,5 +1,5 @@
 /**
- * @brief <CURSOR>
+ * @brief <CURSOR> 
  *
  * @param[in]	  name	  description
  * @param[out]	  name	  description

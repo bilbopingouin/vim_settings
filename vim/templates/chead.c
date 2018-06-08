@@ -1,6 +1,6 @@
 /*******************************************************************************
  *
- * Copyright (c) |YEAR| |COMPANY| 
+ * Copyright (c) |YEAR|  |COMPANY|
  * 
  * This program contains proprietary and confidential information.
  * All rights reserved except as may be permitted by prior written
@@ -8,13 +8,13 @@
  *
  *******************************************************************************
  *
- * Module               <CURSOR>
+ * Module               |MODULE|
  *
  ******************************************************************************/
 /** 
- * @ingroup             Put module name here
+ * @ingroup             <CURSOR> 
  * @file                |FILENAME|
- * @author              TLB (|AUTHORREF|), |EMAIL|              
+ * @author              |AUTHOR| (|AUTHSHORT|), |EMAIL|
  * @date                |DATE| |TIME|
  * @version	        0.1
  * 
@@ -23,8 +23,15 @@
  *      Put description here
  *
  *  History
- *	|xxxx.xx.xx|  TLB   Creation
+ *	|DATE|  TLB   Creation
  *
  ******************************************************************************/
 
 
+/* Includes ------------------------------------------------------------------*/
+/* Private typedef -----------------------------------------------------------*/
+/* Private define ------------------------------------------------------------*/
+/* Private macro -------------------------------------------------------------*/
+/* Private variables ---------------------------------------------------------*/
+/* Private function prototypes -----------------------------------------------*/
+/* Public functions ----------------------------------------------------------*/

@@ -1,0 +1,4 @@
+let g:author_name="Tudi Le Bleis"
+let g:author_short="TLB"
+let g:author_email="lebleis@kem-kueppers.com"
+let g:author_company="KEM Kueppers Elektromechanik GmbH"

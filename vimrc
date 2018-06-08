@@ -68,3 +68,8 @@ source ~/.vim/scripts/undo_utils.vim
 
 " Some configuration for games or such plugins
 source ~/.vim/scripts/games.vim
+
+" Some global variables for various usage
+if filereadable(expand("~/.vim/config"))
+  :source ~/.vim/config
+endif
