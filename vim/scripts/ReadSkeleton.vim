@@ -9,13 +9,12 @@
 "           |              |
 "==============================================================================
 " Available commands:
+"  call SetTemplValues()	 -- Set some values from the templates
 "  call ReadSkeleton()           -- See the available templates and insert it
 "==============================================================================
 " Notes
 "   http://vim.1045645.n5.nabble.com/How-to-insert-text-via-script-function-call-td1153378.html
 "==============================================================================
-
-
 
 function! ReadSkeleton()
   if exists ("g:Skeleton_path")
@@ -49,5 +48,6 @@ function! ReadSkeleton()
   endif
   if skeletonName != ""
     execute "0read " . skeletonName
+    call SetTemplValues()
   endif
 endfunction

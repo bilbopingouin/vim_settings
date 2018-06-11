@@ -90,4 +90,4 @@ au FileType octave		nmap <buffer> <C-l> :!octave %<CR>
 set diffopt=filler,iwhite
 
 " Some templates handling functions
-au FileType c,cpp source ~/.vim/scripts/prog_templates.vim
+source ~/.vim/scripts/prog_templates.vim

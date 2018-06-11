@@ -1,0 +1,4 @@
+let g:author_name="bilbopingouin"
+let g:author_short="bp"
+let g:author_email="bilbopingouin@gmail.com"
+let g:author_company="my_own_company"

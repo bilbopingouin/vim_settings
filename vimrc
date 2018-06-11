@@ -55,7 +55,6 @@ source ~/.vim/scripts/programming_configuration.vim
 
 " Some abbreviations. Particularly useful for mails.
 :ab MfG Mit freundlichen Gruessen
-":ab TLB Tudi Le Bleis
 
 " Search configuration
 source ~/.vim/scripts/search_utils.vim
@@ -68,3 +67,8 @@ source ~/.vim/scripts/undo_utils.vim
 
 " Some configuration for games or such plugins
 source ~/.vim/scripts/games.vim
+
+" Some global variables for various usage
+if filereadable(expand("~/.vim/config"))
+  :source ~/.vim/config
+endif
