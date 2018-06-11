@@ -68,6 +68,10 @@ then
   for file in `find $TARGET_DIR/plugins/align/plugin/* -maxdepth 0`;	 do ln -s $file $(echo $file | sed -n 's/plugins\/align\///p'); done
   for file in `find $TARGET_DIR/plugins/align/doc/* -maxdepth 0`;	 do ln -s $file $(echo $file | sed -n 's/plugins\/align\///p'); done
   for file in `find $TARGET_DIR/plugins/align/autoload/* -maxdepth 0`;	 do ln -s $file $(echo $file | sed -n 's/plugins\/align\///p'); done
+  # DrawIt
+  ln -s $TARGET_DIR/plugins/drawit/DrawItPlugin.vim					 $TARGET_DIR/plugin/DrawItPlugin.vim
+  ln -s $TARGET_DIR/plugins/drawit/DrawIt.txt						 $TARGET_DIR/doc/DrawIt.txt
+  ln -s $TARGET_DIR/plugins/drawit/DrawIt.vim						 $TARGET_DIR/autoload/DrawIt.vim
 else
   echo "$TARGET_DIR should be set manually: not a softlink"
 fi

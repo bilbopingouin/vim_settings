@@ -25,6 +25,9 @@ vim/plugin/AlignPlugin.vim
 vim/plugin/cecutil.vim
 vim/autoload/Align.vim
 vim/autoload/AlignMaps.vim
+vim/plugin/DrawItPlugin.vim
+vim/doc/DrawIt.txt
+vim/autoload/DrawIt.vim
 
 
 # netrw history
