@@ -43,6 +43,7 @@ git submodule update
 ```
 cd my_configuration_dir/vim_settings
 ./set_links.sh
+./set_config.sh
 ```
 
 All the configuration files are organised using soft-links. Also the .vim repository will be soft-link to the current one.

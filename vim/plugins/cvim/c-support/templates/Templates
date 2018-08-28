@@ -2,13 +2,13 @@
 §  User Macros
 § ==========================================================
 
-SetMacro( 'AUTHOR',      'Le Bleis, Tudi' )
-SetMacro( 'AUTHORREF',   'TLB' )
-SetMacro( 'COMPANY',     'Proton Motor Fuel Cell GmbH' )
+SetMacro( 'AUTHOR',      '|FULLNAME|' )
+SetMacro( 'AUTHORREF',   '|USERNAME|' )
+SetMacro( 'COMPANY',     '|COMPANY|' )
 SetMacro( 'COPYRIGHT',   '' )
-SetMacro( 'EMAIL',       't.lebleis@proton-motor.de' )
+SetMacro( 'EMAIL',       '|EMAIL|' )
 SetMacro( 'LICENSE',     '' )
-SetMacro( 'ORGANIZATION','Proton Motor Fuell Cell GmbH' )
+SetMacro( 'ORGANIZATION','|COMPANY|' )
 
 SetStyle( 'C' )
 
