@@ -22,7 +22,7 @@
 
 
 " set syntax for modelica file
-au BufRead,BufNewFile *.mo set filetype=mo
+au BufRead,BufNewFile *.mo  set filetype=mo
 
 " set syntax for arduino ino files
 au BufRead,BufNewFile *.ino set filetype=c
@@ -31,7 +31,7 @@ au BufRead,BufNewFile *.ino set filetype=c
 au BufRead,BufNewFile *.gp  set filetype=gnuplot
 
 " GNU Octave. conflicts with matlab
-au BufRead,BufNewFile *.m  set filetype=octave 
+au BufRead,BufNewFile *.m   set filetype=octave 
 
 " Siemens SCL
 au BufRead,BufNewFile *.scl set filetype=scl
@@ -50,21 +50,21 @@ au FileType python        set expandtab         " convert tabs into spaces, pyth
 "map <F7> :w<enter>:tabnew<enter>:r!make<enter>
 " one can also use :make which calls a Makefile
 " Since there are some default compilation one can also
-au FileType c,cpp set makeprg=make\ %:r
+au FileType c,cpp   set makeprg=make\ %:r
 " then calling 'make' will result in either calling the Makefile OR using default
-au FileType c,cpp nmap <F7> :make<CR>
+au FileType c,cpp   nmap <F7> :make<CR>
 
 " when compiling using the above, the errors appear in the quickfix window
 " if the quickfix buffer is opened, <C-Down> allows to jump to the next error
 " it is a shortcut to :cn but only in some conditions
-au FileType c,cpp nnoremap <expr> <C-Down> (&buftype is# "quickfix" \|\| empty(filter(tabpagebuflist(), 'getbufvar(v:val, "&buftype") is# "quickfix"')) ? "" : ":cn<CR>" )
+au FileType c,cpp   nnoremap <expr> <C-Down> (&buftype is# "quickfix" \|\| empty(filter(tabpagebuflist(), 'getbufvar(v:val, "&buftype") is# "quickfix"')) ? "" : ":cn<CR>" )
 
 
 " Commenting code
 source ~/.vim/scripts/commenting_code.vim
 
 " templates for C/C++ files
-au FileType c,cpp source ~/.vim/scripts/c_templ.vim
+au FileType c,cpp   source ~/.vim/scripts/c_templ.vim
 
 " templates also available for other files:
 au FileType mo	    source ~/.vim/scripts/c_templ.vim

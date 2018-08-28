@@ -58,7 +58,8 @@ then
   ln -s  $TARGET_DIR/plugins/echofunc/echofunc.vim					 $TARGET_DIR/plugin/echofunc.vim 
   # fugitive
   ln -s  $TARGET_DIR/plugins/fugitive/vim-fugitive/plugin/fugitive.vim			 $TARGET_DIR/plugin/fugitive.vim 
-  ln -s  $TARGET_DIR/plugins/fugitive/vim-fugitive/doc/fugitive.txt			 $TARGET_DIR/doc/fugitive.txt	
+  ln -s  $TARGET_DIR/plugins/fugitive/vim-fugitive/doc/fugitive.txt			 $TARGET_DIR/doc/fugitive.txt
+  ln -s  $TARGET_DIR/plugins/fugitive/vim-fugitive/autoload/fugitive.vim		 $TARGET_DIR/autoload/fugitive.vim
   # vim games
   for file in `find $TARGET_DIR/plugins/vim-games/plugin/* -maxdepth 0`; do ln -s $file $(echo $file | sed -n 's/plugins\/vim-games\///p'); done
   # vim-surround

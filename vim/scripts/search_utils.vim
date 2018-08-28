@@ -103,3 +103,5 @@ nnoremap <leader>lvc :execute "lvimgrep /".input("Pattern: ")."/j **/*.[ch]"<CR>
 nnoremap §	     bye:execute "lvimgrep /\\<".@"."\\>/j **/*.[ch]"<CR>
 vnoremap §	     y:execute "lvimgrep /\\<".@"."\\>/j **/*.[ch]"<CR>
 
+" Replace a pattern in files
+nnoremap <leader>rpf  :execute "arg ".input("Where to search: ")."/**/*.[".input("Files filter (e.g. ch): ")."] \| argdo %s/".input("Pattern: ")."/".input("Replacement: ")."/gc \| update"<CR>

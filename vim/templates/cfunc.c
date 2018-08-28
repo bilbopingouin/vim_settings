@@ -1,13 +1,13 @@
 /**
- * @brief <CURSOR> 
+ * |FUNCTION NAME|
  *
- * @param[in]	  name	  description
- * @param[out]	  name	  description
- * @param[in,out] name	  description
+ * @brief   <CURSOR> 
  *
- * @tparam    type name	  description
+ |PARAM DESC|
+ *
+ |PARAM TYPE|
  * 
- * @return		  none
+ * @return  |RETVAL|
  *
  * @b Description
  *

@@ -33,7 +33,14 @@ set showcmd	    " see that we have typed the leader and other commands
 :se noet
 "	< 4 * 2 spaces = 1 tab
 
+" See tabs and spaces
+  "Quick toggling
+nmap <leader>vs	:set list!<enter>
+  " Characters set
+set listchars=tab:▸_,eol:¬,space:·,nbsp:~   "set characters to visualise tabs, end of line and space
+
 "Set the status line
+"set statusline=%<%f\ %h%m%r%q%{FugitiveStatusline()}%=%-14.(%l,%c%V%)\ %P
 set statusline=%<%f\ %h%m%r%q%{fugitive#statusline()[4:-2]}%=%-14.(%l,%c%V%)\ %P
 "set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 

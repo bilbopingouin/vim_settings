@@ -5,30 +5,30 @@
 .*.swp
 
 # softlinks
+vim/autoload/Align.vim
+vim/autoload/AlignMaps.vim
+vim/autoload/DrawIt.vim
+vim/autoload/fugitive.vim
 vim/colors/solarized.vim
+vim/doc/Align.txt
+vim/doc/DrawIt.txt
 vim/doc/fugitive.txt
 vim/doc/solarized.txt
+vim/doc/surround.txt
+vim/plugin/AlignMapsPlugin.vim
+vim/plugin/AlignPlugin.vim
+vim/plugin/DrawItPlugin.vim
+vim/plugin/VimSokoban
+vim/plugin/cecutil.vim
 vim/plugin/echofunc.vim
 vim/plugin/fugitive.vim
-vim/plugin/undotree.vim
-vim/syntax/undotree.vim
-vim/doc/surround.txt
-vim/plugin/VimSokoban
 vim/plugin/sokoban.vim
 vim/plugin/sudoku.vim
 vim/plugin/sudoku_game.vim
 vim/plugin/surround.vim
 vim/plugin/tetris.vim
-vim/doc/Align.txt
-vim/plugin/AlignMapsPlugin.vim
-vim/plugin/AlignPlugin.vim
-vim/plugin/cecutil.vim
-vim/autoload/Align.vim
-vim/autoload/AlignMaps.vim
-vim/plugin/DrawItPlugin.vim
-vim/doc/DrawIt.txt
-vim/autoload/DrawIt.vim
-
+vim/plugin/undotree.vim
+vim/syntax/undotree.vim
 
 # netrw history
 vim/.netrwhist

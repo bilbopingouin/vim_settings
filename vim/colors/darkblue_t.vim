@@ -3,7 +3,7 @@
 " Maintainer:	Bohdan Vlasyuk <bohdan@vstu.edu.ua>
 " Last Change:	2008 Jul 18
 " Peronalised version: darkblue_t
-" Last modification by T. Le Bleis -- 05.11.2014
+" Last modification by T. Le Bleis -- 20.8.2018
 
 " darkblue -- for those who prefer dark background
 " [note: looks bit uglier with some terminal palettes,
@@ -68,3 +68,7 @@ hi String								ctermfg=darkred
 " hi PmenuSel	guifg=#c0c0c0 guibg=#2050d0
 " hi PmenuSbar	guifg=blue    guibg=darkgray
 " hi PmenuThumb	guifg=#c0c0c0
+
+" For spaces/tabs
+highlight NonText	guifg=darkgrey					ctermfg=darkgrey
+highlight SpecialKey	guifg=darkgrey					ctermfg=darkgrey
