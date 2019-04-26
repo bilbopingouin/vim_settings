@@ -18,6 +18,7 @@ vim/doc/surround.txt
 vim/plugin/AlignMapsPlugin.vim
 vim/plugin/AlignPlugin.vim
 vim/plugin/DrawItPlugin.vim
+vim/plugin/cscope_maps.vim
 vim/plugin/VimSokoban
 vim/plugin/cecutil.vim
 vim/plugin/echofunc.vim
