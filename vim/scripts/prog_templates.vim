@@ -10,6 +10,7 @@
 "==============================================================================
 " Available commands:
 "  call SetTemplValues()	 -- Set some values from the templates
+"  call GetToCursor()		 -- Look for <CURSOR> get into insert mode
 "  call IncludeVimHeaderTempl()	 -- Include the template and update them
 "  call CreateNewVimCfgFile()	 -- Create a new vim file including the 
 "				  corresponding template
@@ -21,6 +22,9 @@
 "  call IncludeCSourceFileTempl()-- Include the template and update them
 "  call CreateNewCSourceFile()	 -- Create a new C source file including the 
 "				  corresponding templates
+"  call CreateScratchBuffer()	 -- Create a new buffer with scratch options
+"  call MoveScratchBufferContent()-- Yank the content of the current buffer, unload 
+"				  it and paste it in the next buffer.		     
 "  call IncludeCFunctionDoc()	 -- Include the function documentation
 "==============================================================================
 " Notes
@@ -141,7 +145,11 @@ function! SetTemplValues()
       endwhile
     endif
   endif
+endfunction
 
+"==============================================================================
+
+function! GetToCursor()
   if search("<CURSOR>") != 0
     :echo "Reaching <CURSOR>"
     :call search("<CURSOR>")
@@ -156,6 +164,7 @@ function! IncludeVimHeaderTempl()
   :set paste
   :0r!cat ~/.vim/templates/vimhead.vim
   :call SetTemplValues()
+  :call GetToCursor()
   :set nopaste
 endfunction
 
@@ -188,6 +197,7 @@ function! IncludeCHeaderFileTempl()
   :r!cat ~/.vim/templates/cbody.h
   :call SetCHeaderTags()
   :call SetTemplValues()
+  :call GetToCursor()
   :set nopaste
 endfunction
 
@@ -220,6 +230,7 @@ function! IncludeCSourceFileTempl()
   :r!cat ~/.vim/templates/cbody.c
   :call SetCSourceInclude ()
   :call SetTemplValues()
+  :call GetToCursor()
   :set nopaste
 endfunction
 
@@ -237,9 +248,28 @@ endfunction
 
 "==============================================================================
 
+function! CreateScratchBuffer()
+   :new
+   :setlocal buftype=nofile
+   :setlocal bufhidden=hide
+   :setlocal noswapfile
+endfunction
+
+"==============================================================================
+
+function! MoveScratchBufferContent()
+  :%y
+  :bunload
+  :normal P
+endfunction
+
+"==============================================================================
+
+
 function! IncludeCFunctionDoc()
   :set paste
   :r!cat ~/.vim/templates/cfunc.c
+  :%foldopen!
   :call SetTemplValues()
   :set nopaste
 endfunction
@@ -287,9 +317,15 @@ function! CreateNewCFunction()
     endwhile 
   endif
 
+  :call CreateScratchBuffer()
   :call IncludeCFunction()
   :call IncludeCFunctionDoc()
+  :let s:has_cursor = search("<CURSOR>")
+  :call MoveScratchBufferContent()
   :set nopaste
+  if s:has_cursor != 0
+    :call GetToCursor()
+  endif
 endfunction
 
 "==============================================================================
