@@ -19,13 +19,16 @@
 
 
 
-" Includes C commenting /* .. */ on visually slected text
+" Includes C commenting /* .. */ on visually selected text
   " the following works well but on single line
-"vnoremap <leader>cc y:<C-B>sil <C-E>s/\(<C-R>"\)/\/* \1 *\//<CR>:noh<CR> 
+    "vnoremap <leader>cc y:<C-B>sil <C-E>s/\(<C-R>"\)/\/* \1 *\//<CR>:noh<CR> 
   " an alternative that works on multiple lines
-vnoremap <leader>bc <Esc>`<i/* <Esc>`>a */<Esc>
+    "vnoremap <leader>bc <Esc>`<i/* <Esc>`>a */<Esc>  " Does not work on a single line, as `> moves due to the insertion
+    vnoremap <leader>bc <Esc>`>a */<Esc>`<i/* <Esc>
+  " another alternative
+    " vnoremap <leader>k x:exe "normal i/*<C-r>"*/"<CR>
   " Suppressing comment:
-"vnoremap <leader>uc :<C-B>sil <C-E>s/\/\*\ \([.<CR>]*\)\ \*\//\1/<CR>:noh<CR>
+    "vnoremap <leader>uc :<C-B>sil <C-E>s/\/\*\ \([.<CR>]*\)\ \*\//\1/<CR>:noh<CR>
   " it seems not to work on multiple lines
 
 
