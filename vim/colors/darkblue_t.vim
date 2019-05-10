@@ -9,7 +9,7 @@
 " [note: looks bit uglier with some terminal palettes,
 " but is fine on default linux console palette.]
 
-set bg=dark
+"set bg=dark
 hi clear
 if exists("syntax_on")
 	syntax reset
@@ -17,7 +17,11 @@ endif
 
 let colors_name = "darkblue_t"
 
-hi Normal	guifg=#c0c0c0 guibg=#000040				ctermfg=gray	  ctermbg=black
+if &background == "dark"
+  hi Normal	guifg=#c0c0c0 guibg=#000040				ctermfg=gray	  ctermbg=black
+else
+  hi Normal	guifg=#c0c0c0 guibg=#000040				ctermfg=black	  ctermbg=white
+endif
 hi ErrorMsg	guifg=#ffffff guibg=#287eff				ctermfg=red	  ctermbg=lightblue
 hi Visual	guifg=#8080ff guibg=fg		gui=reverse		ctermfg=lightblue ctermbg=fg	    cterm=reverse
 hi VisualNOS	guifg=#8080ff guibg=fg		gui=reverse,underline	ctermfg=lightblue ctermbg=fg	    cterm=reverse,underline
@@ -56,7 +60,11 @@ hi Comment	guifg=#80a0ff						ctermfg=darkgray
 hi Constant	guifg=#ffa0a0						ctermfg=magenta			    cterm=none
 hi Special	guifg=Orange 			gui=none		ctermfg=brown			    cterm=none 
 hi Identifier	guifg=#40ffff						ctermfg=cyan			    cterm=none
-hi Statement	guifg=#ffff60			gui=none		ctermfg=yellow			    cterm=none 
+if &background == "dark"
+  hi Statement	guifg=#ffff60			gui=none		ctermfg=yellow			    cterm=none 
+else
+  hi Statement	guifg=#ffff60			gui=none		ctermfg=blue			    cterm=none 
+endif
 hi PreProc	guifg=#ff80ff			gui=none 		ctermfg=darkblue		    cterm=bold
 hi type		guifg=#60ff60			gui=none 		ctermfg=green			    cterm=none
 hi Underlined												    cterm=underline term=underline
