@@ -30,6 +30,7 @@ endif
 
 
 " Color scheme
+set bg=dark
 color darkblue_t
 
 " Rendered uninteresting by the use of own color scheme.
