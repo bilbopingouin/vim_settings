@@ -77,4 +77,4 @@ endif
 filetype plugin on
 
 " List of managed plugins
-source ~/.vim/scripts/plugins_list.vim
+"source ~/.vim/scripts/plugins_list.vim
