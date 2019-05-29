@@ -72,3 +72,6 @@ source ~/.vim/scripts/games.vim
 if filereadable(expand("~/.vim/config"))
   :source ~/.vim/config
 endif
+
+" Allowing filetype plugins
+filetype plugin on

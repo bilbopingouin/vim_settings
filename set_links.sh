@@ -105,6 +105,11 @@ then
   ln -s $TARGET_DIR/plugins/drawit/DrawIt.txt						 $TARGET_DIR/doc/DrawIt.txt
   ln -s $TARGET_DIR/plugins/drawit/DrawIt.vim						 $TARGET_DIR/autoload/DrawIt.vim
   echo " ok."
+  # Vim-Markdown-ToC
+  echo -n "    Setting Markdown-ToC.."
+  ln -s $TARGET_DIR/plugins/vim-markdown-toc/ftplugin/markdown.vim			 $TARGET_DIR/after/ftplugin/markdown.vim
+  ln -s $TARGET_DIR/plugins/vim_markdown-toc/ftdetect/markdown.vim			 $TARGET_DIR/ftdetect/markdown.vim
+  echo " ok."
 else
   echo "$TARGET_DIR does not exist"
 fi

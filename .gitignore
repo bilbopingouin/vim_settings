@@ -33,3 +33,5 @@ vim/syntax/undotree.vim
 
 # netrw history
 vim/.netrwhist
+vim/ftdetect/markdown.vim
+vim/after/ftplugin/markdown.vim
