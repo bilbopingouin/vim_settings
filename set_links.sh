@@ -110,6 +110,10 @@ then
   ln -s $TARGET_DIR/plugins/vim-markdown-toc/ftplugin/markdown.vim			 $TARGET_DIR/after/ftplugin/markdown.vim
   ln -s $TARGET_DIR/plugins/vim_markdown-toc/ftdetect/markdown.vim			 $TARGET_DIR/ftdetect/markdown.vim
   echo " ok."
+  # Vim-Plug
+  echo -n "    Setting Plug-Vim.."
+  ln -s $TARGET_DIR/plugins/plug-vim/autoload/plug.vim					 $TARGET_DIR/autoload/plug.vim
+  echo " ok."
 else
   echo "$TARGET_DIR does not exist"
 fi

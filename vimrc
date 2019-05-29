@@ -75,3 +75,6 @@ endif
 
 " Allowing filetype plugins
 filetype plugin on
+
+" List of managed plugins
+source ~/.vim/scripts/plugins_list.vim
