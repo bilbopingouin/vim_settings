@@ -29,52 +29,63 @@
 " leader
 let mapleader = ',' " default is \ but on a French keyboard , is easier
 
+"packadd plug
+
 " Dealing with Japanese
-:source ~/.vim/scripts/JaInVim.vim
+":source ~/.vim/scripts/JaInVim.vim
 
 " Some basic configuration
-source ~/.vim/scripts/basic_configuration.vim
+"source ~/.vim/scripts/basic_configuration.vim
 
 " Color schemes and highlighting
-source ~/.vim/scripts/color_configuration.vim
+"source ~/.vim/scripts/color_configuration.vim
 
 " Basic various commands
-source ~/.vim/scripts/basic_commands.vim
+"source ~/.vim/scripts/basic_commands.vim
 
 " Text spell checking
-source ~/.vim/scripts/spellcheck.vim
+"source ~/.vim/scripts/spellcheck.vim
 
 " Programming functionalities
-source ~/.vim/scripts/programming_configuration.vim
+"source ~/.vim/scripts/programming_configuration.vim
 
 " When incrementing, numbers starting with 0x are recognised as hexa and the ones starting with 0 as octal.
 " Since I never work with octal numbers and that I sometimes defined decimal starting from 0, I set the 
 " formats as 
-:se nrformats=hex
+":se nrformats=hex
 " also possible are 'octal' and 'alpha'.
 
 " Some abbreviations. Particularly useful for mails.
-:ab MfG Mit freundlichen Gruessen
+":ab MfG Mit freundlichen Gruessen
 
 " Search configuration
-source ~/.vim/scripts/search_utils.vim
+"source ~/.vim/scripts/search_utils.vim
 
 " browsing
-source ~/.vim/scripts/browsing.vim
+"source ~/.vim/scripts/browsing.vim
 
 " Save undo history for future use
-source ~/.vim/scripts/undo_utils.vim
+"source ~/.vim/scripts/undo_utils.vim
 
 " Some configuration for games or such plugins
-source ~/.vim/scripts/games.vim
+"source ~/.vim/scripts/games.vim
 
 " Some global variables for various usage
-if filereadable(expand("~/.vim/config"))
-  :source ~/.vim/config
-endif
+"if filereadable(expand("~/.vim/config"))
+"  :source ~/.vim/config
+"endif
 
 " Allowing filetype plugins
 filetype plugin on
 
 " List of managed plugins
 "source ~/.vim/scripts/plugins_list.vim
+"packadd plug
+
+"autocmd VimEnter * PlugInstall
+
+call plug#begin('~/.vim/managed_plugs')
+
+Plug 'tpope/vim-fugitive'
+
+call plug#end()
