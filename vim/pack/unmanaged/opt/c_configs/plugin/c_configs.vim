@@ -21,7 +21,8 @@ nmap <F7> :make<CR>
 nnoremap <expr> <C-Down> (&buftype is# "quickfix" \|\| empty(filter(tabpagebuflist(), 'getbufvar(v:val, "&buftype") is# "quickfix"')) ? "" : ":cn<CR>" )
 
 " templates for C/C++ files
-source ~/.vim/scripts/c_templ.vim
+"source ~/.vim/scripts/c_templ.vim
+packadd c_templ
 
 " automatic foldings
 " possible values: manual, indent, syntax, expr
