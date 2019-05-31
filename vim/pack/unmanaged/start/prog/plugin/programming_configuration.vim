@@ -21,70 +21,52 @@
 "==============================================================================
 
 
-" set syntax for modelica file
-au BufRead,BufNewFile *.mo  set filetype=mo
-
-" set syntax for arduino ino files
-au BufRead,BufNewFile *.ino set filetype=c
-
-" Gnuplot configuration
-au BufRead,BufNewFile *.gp  set filetype=gnuplot
-
-" GNU Octave. conflicts with matlab
-au BufRead,BufNewFile *.m   set filetype=octave 
-
-" Siemens SCL
-au BufRead,BufNewFile *.scl set filetype=scl
-
 "Indent with respects with C programming
 ":se cindent
-au FileType c,cpp     set cindent " sets cindent but only for certain files
+"au FileType c,cpp     set cindent " sets cindent but only for certain files
 au FileType javacript set cindent
 
 "From Pep8 standard, indent should be 4 spaces in python
-au FileType python	  set softtabstop=4
-au FileType python	  set shiftwidth=4
-au FileType python        set expandtab         " convert tabs into spaces, python3 refuses mixing
+" au FileType python	  set softtabstop=4
+" au FileType python	  set shiftwidth=4
+" au FileType python        set expandtab         " convert tabs into spaces, python3 refuses mixing
 
 " Compile and show result in a split screen
 "map <F7> :w<enter>:tabnew<enter>:r!make<enter>
 " one can also use :make which calls a Makefile
 " Since there are some default compilation one can also
-au FileType c,cpp   set makeprg=make\ %:r
+" au FileType c,cpp   set makeprg=make\ %:r
 " then calling 'make' will result in either calling the Makefile OR using default
-au FileType c,cpp   nmap <F7> :make<CR>
+" au FileType c,cpp   nmap <F7> :make<CR>
 
 " when compiling using the above, the errors appear in the quickfix window
 " if the quickfix buffer is opened, <C-Down> allows to jump to the next error
 " it is a shortcut to :cn but only in some conditions
-au FileType c,cpp   nnoremap <expr> <C-Down> (&buftype is# "quickfix" \|\| empty(filter(tabpagebuflist(), 'getbufvar(v:val, "&buftype") is# "quickfix"')) ? "" : ":cn<CR>" )
+" au FileType c,cpp   nnoremap <expr> <C-Down> (&buftype is# "quickfix" \|\| empty(filter(tabpagebuflist(), 'getbufvar(v:val, "&buftype") is# "quickfix"')) ? "" : ":cn<CR>" )
 
 
 " Commenting code
-source ~/.vim/scripts/commenting_code.vim
+" source ~/.vim/scripts/commenting_code.vim
 
 " templates for C/C++ files
-au FileType c,cpp   source ~/.vim/scripts/c_templ.vim
-
-" templates also available for other files:
-au FileType mo	    source ~/.vim/scripts/c_templ.vim
-au FileType octave  source ~/.vim/scripts/c_templ.vim
+" au FileType c,cpp   source ~/.vim/scripts/c_templ.vim
 
 " Aligning assignments:
 source ~/.vim/scripts/align_assign.vim
 
 " automatic foldings
 " possible values: manual, indent, syntax, expr
-au FileType c,cpp set foldmethod=indent
+" au FileType c,cpp set foldmethod=indent
 
 " tags for souce code
 source ~/.vim/scripts/tags.vim
 
 " Run the program/script
-au FileType c,cpp		nmap <buffer> <C-l> :!./%<<CR>
-au FileType python,perl,bash,sh nmap <buffer> <C-l> :!./%<CR>
-au FileType gnuplot		nmap <buffer> <C-l> :!gnuplot %<CR>
-au FileType octave		nmap <buffer> <C-l> :!octave %<CR>
+" au FileType c,cpp		nmap <buffer> <C-l> :!./%<<CR>
+au FileType perl,bash,sh nmap <buffer> <C-l> :!./%<CR>
+" au FileType python,perl,bash,sh nmap <buffer> <C-l> :!./%<CR>
+" au FileType gnuplot		nmap <buffer> <C-l> :!gnuplot %<CR>
+" au FileType octave		nmap <buffer> <C-l> :!octave %<CR>
 
 " When using diff, some options
 set diffopt=filler,iwhite

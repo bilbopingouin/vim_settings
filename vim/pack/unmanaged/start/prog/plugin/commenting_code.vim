@@ -19,7 +19,7 @@
 
 
 " un/comment in Visual
-let b:comment_leader = '' " default value
+let b:comment_leader = '# ' " default value
 au FileType vim	    let b:comment_leader = '" '
 au FileType c,css   let b:comment_leader = '// '
 au FileType cpp     let b:comment_leader = '// '
@@ -37,6 +37,6 @@ noremap <leader>c : <C-B>sil <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<C
 noremap <leader>u : <C-B>sil <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:noh<CR>
 
 " /* .. */ comments for C/C++ files
-au FileType c,cpp source ~/.vim/scripts/c_comments.vim
+"au FileType c,cpp source ~/.vim/scripts/c_comments.vim
 
 
