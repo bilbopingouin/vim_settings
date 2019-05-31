@@ -15,5 +15,7 @@ Plug 'mbbill/undotree'
 " Plug 'tomtom/ttagecho_vim'
 " Plug 'WolfgangMehner/c-support'
 " Plug 'altercation/vim-colors-solarized'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
