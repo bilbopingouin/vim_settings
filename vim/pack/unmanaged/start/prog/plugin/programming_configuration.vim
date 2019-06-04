@@ -59,7 +59,7 @@ source ~/.vim/scripts/align_assign.vim
 " au FileType c,cpp set foldmethod=indent
 
 " tags for souce code
-source ~/.vim/scripts/tags.vim
+"source ~/.vim/scripts/tags.vim "moved to code_review package
 
 " Run the program/script
 " au FileType c,cpp		nmap <buffer> <C-l> :!./%<<CR>
