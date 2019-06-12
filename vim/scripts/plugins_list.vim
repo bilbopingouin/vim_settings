@@ -18,6 +18,7 @@ Plug 'mbbill/undotree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'hhatto/autopep8', {'for': 'python'}
+Plug 'w0rp/ale'
 
 
 call plug#end()
