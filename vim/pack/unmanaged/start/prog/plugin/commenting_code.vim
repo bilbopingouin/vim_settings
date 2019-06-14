@@ -1,7 +1,7 @@
 "==============================================================================
 " Comment line by line with comments that adapts to type of code
 "==============================================================================
-" Author: T. Le Bleis
+" Author: bilbopingouin
 " Original date: 04.11.2014
 " Modification history:
 "    Date   |  Name        | Comments

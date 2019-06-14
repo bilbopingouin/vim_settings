@@ -1,7 +1,7 @@
 "==============================================================================
 " Deals with file encoding and Japanese input layout
 "==============================================================================
-" Author: T. Le Bleis
+" Author: bilbopingouin
 " Original date: 24.10.2014
 " Modification history:
 "    Date   |  Name        | Comments

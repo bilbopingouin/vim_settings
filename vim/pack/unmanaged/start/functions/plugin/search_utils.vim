@@ -1,13 +1,13 @@
 "==============================================================================
 " Some configuration and commands for searching within a file
 "==============================================================================
-" Author: T. Le Bleis
+" Author: bilbopingouin
 " Original date: 04.11.2014
 " Modification history:
 "    Date   |  Name        | Comments
 "  ---------|--------------|-------------------------------
-"  5.11.14  |  TLB         | moved syntax highlighting to color_configuration.vim
-" 20.11.14  |  TLB         | <C-Right> and <C-Left>
+"  5.11.14  |  BP         | moved syntax highlighting to color_configuration.vim
+" 20.11.14  |  BP         | <C-Right> and <C-Left>
 "==============================================================================
 " Available commands:
 "  <Space>	      -- Toggle Search Highlight

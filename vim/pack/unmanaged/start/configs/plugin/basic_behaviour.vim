@@ -1,7 +1,7 @@
 "==============================================================================
 " Basic behaviour
 "==============================================================================
-" Author: T. Le Bleis
+" Author: bilbopingouin
 " Original date: 31.05.2019
 " Modification history:
 "    Date   |  Name        | Comments

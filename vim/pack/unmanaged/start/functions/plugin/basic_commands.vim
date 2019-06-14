@@ -1,12 +1,12 @@
 "==============================================================================
 " Some commands that do not fit in a given category
 "==============================================================================
-" Author: T. Le Bleis
+" Author: bilbopingouin
 " Original date: 10.11.2014
 " Modification history:
 "    Date   |  Name        | Comments
 "  ---------|--------------|-------------------------------
-" 2015/03/16|  TLB         | Toggling t_ut
+" 2015/03/16|  BP         | Toggling t_ut
 "           |              |
 "==============================================================================
 " Available commands:

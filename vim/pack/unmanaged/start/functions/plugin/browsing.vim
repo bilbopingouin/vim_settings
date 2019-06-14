@@ -1,12 +1,12 @@
 "==============================================================================
 " Using netrw browing style: configuration and useful tools
 "==============================================================================
-" Author: T. Le Bleis
+" Author: bilbopingouin
 " Original date: 04.11.2014
 " Modification history:
 "    Date   |  Name        | Comments
 "  ---------|--------------|-------------------------------
-" 20.11.2014|  TLB         | <C-Left> -> <C-Up>
+" 20.11.2014|  BP         | <C-Left> -> <C-Up>
 "==============================================================================
 " Available commands:
 "  <F9>           -- Toggle :Vexplore

@@ -1,12 +1,12 @@
 "==============================================================================
 " Save undo history into files to be usable after closing and reopening
 "==============================================================================
-" Author: T. Le Bleis
+" Author: bilbopingouin
 " Original date: 24.10.2014
 " Modification history:
 "    Date   |  Name        | Comments
 "  ---------|--------------|-------------------------------
-"  27.11.14 | TLB          | No hardcoding of the home directory
+"  27.11.14 | BP          | No hardcoding of the home directory
 "           |              |
 "==============================================================================
 " Available commands:

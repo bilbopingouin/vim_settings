@@ -2,12 +2,12 @@
 " This file provides some function to help insert some templates into C/C++ 
 " files. 
 "==============================================================================
-" Author: T. Le Bleis
+" Author: bilbopingouin
 " Original date: 03.11.2014
 " Modification history:
 "    Date   |  Name        | Comments
 "  ---------|--------------|-------------------------------
-"  4.11.14  | TLB          | Added function InsertPreProcIf and <leader>pi
+"  4.11.14  | BP          | Added function InsertPreProcIf and <leader>pi
 "           |              |
 "==============================================================================
 " Available commands:

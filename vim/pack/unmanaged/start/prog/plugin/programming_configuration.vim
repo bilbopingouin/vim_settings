@@ -1,14 +1,14 @@
 "==============================================================================
 " Configuations for code writing/reading in vim
 "==============================================================================
-" Author: T. Le Bleis
+" Author: bilbopingouin
 " Original date: 04.11.2014
 " Modification history:
 "    Date   |  Name        | Comments
 "  ---------|--------------|-------------------------------
-" 2015/02/26| TLB          | Adding the C-x functionality
-" 2015/03/03| TLB          | Adding the C-Down functionality and fixing the C-x
-" 2015/03/10| TLB	   | Octave files
+" 2015/02/26| BP          | Adding the C-x functionality
+" 2015/03/03| BP          | Adding the C-Down functionality and fixing the C-x
+" 2015/03/10| BP	   | Octave files
 "           |              |
 "==============================================================================
 " Available commands:

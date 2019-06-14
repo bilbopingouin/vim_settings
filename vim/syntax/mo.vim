@@ -1,5 +1,5 @@
 " Created for modelica files
-" Author: T. Le Bleis (tudi.lebleis@gmail.com)
+" Author: bilbopingouin (bilbopingouin@gmail.com)
 " Original: 13.11.2014
 " Modification: 20.11.2014
 " -------------------------------------------------------------

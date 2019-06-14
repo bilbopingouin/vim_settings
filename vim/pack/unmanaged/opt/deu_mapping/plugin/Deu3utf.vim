@@ -3,7 +3,7 @@
 " changing the encoding of the file. It changes the special charactes with
 " their specific LaTeX code.
 "==============================================================================
-" Author: T. Le Bleis
+" Author: bilbopingouin
 " Original date: 14.10.2014
 " Modification history:
 "    Date   |  Name        | Comments

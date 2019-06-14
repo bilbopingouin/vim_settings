@@ -1,7 +1,7 @@
 "==============================================================================
 " Configuration to use the built-in tags functionality from vim
 "==============================================================================
-" Author: T. Le Bleis
+" Author: bilbopingouin
 " Original date: 04.11.2014
 " Modification history:
 "    Date   |  Name        | Comments

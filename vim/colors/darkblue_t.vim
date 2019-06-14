@@ -3,7 +3,7 @@
 " Maintainer:	Bohdan Vlasyuk <bohdan@vstu.edu.ua>
 " Last Change:	2008 Jul 18
 " Peronalised version: darkblue_t
-" Last modification by T. Le Bleis -- 20.8.2018
+" Last modification by bilbopingouin -- 20.8.2018
 
 " darkblue -- for those who prefer dark background
 " [note: looks bit uglier with some terminal palettes,
@@ -71,7 +71,7 @@ hi Underlined												    cterm=underline term=underline
 hi Ignore	guifg=bg						ctermfg=bg
 hi String								ctermfg=darkred
 
-" suggested by tigmoid, 2008 Jul 18 & removed by T. Le Bleis
+" suggested by tigmoid, 2008 Jul 18 & removed by bilbopingouin
 " hi Pmenu	guifg=#c0c0c0 guibg=#404080
 " hi PmenuSel	guifg=#c0c0c0 guibg=#2050d0
 " hi PmenuSbar	guifg=blue    guibg=darkgray

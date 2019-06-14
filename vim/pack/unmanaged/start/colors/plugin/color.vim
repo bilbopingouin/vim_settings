@@ -1,12 +1,12 @@
 "==============================================================================
 " Configuration of color scheme and particular highlighiting
 "==============================================================================
-" Author: T. Le Bleis
+" Author: bilbopingouin
 " Original date: 05.11.2014
 " Modification history:
 "    Date   |  Name        | Comments
 "  ---------|--------------|-------------------------------
-"  26.11.14 | TLB          | Adding the t_ut part
+"  26.11.14 | BP          | Adding the t_ut part
 "           |              |
 "==============================================================================
 " Available commands:
